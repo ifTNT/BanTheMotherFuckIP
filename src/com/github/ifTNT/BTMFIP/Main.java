@@ -16,7 +16,7 @@ public class Main extends JavaPlugin implements Listener{
 	public void onEnable(){
 		logger=getLogger();
 		getServer().getPluginManager().registerEvents(this,this);
-		logger.info("BanTheMotherFuckIP");
+		logger.info("BanTheMotherFuckingIP");
 		logger.info("Enable success  :)");
 	}
 	@Override

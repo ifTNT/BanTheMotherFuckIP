@@ -1,4 +1,4 @@
-BanTheMotherFuckIP
+BanTheMotherFuckingIP
 ======
 一個Bukkit插件  
 只是單純Ban掉那些被BanID又再次登入的人的IP  

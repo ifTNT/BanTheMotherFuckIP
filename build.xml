@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="RF-MCLauncher-B" default="build">
+  <property name="ProjectName" value="BanTMFIP" />
+  <property name="Version" value="0.1" />
+  <property name="SrcDir" value="src" />
+  <property name="BinDir" value="bin" />
+  <property name="JarFile" value="./${ProjectName}_${Version}.jar" />
+
+  <target name="clean" description="清除已編譯的檔案">
+    <echo message="Cleaning Project..." />
+    <deltree dir="${BinDir}" />
+    <!--<delete file="${JarFile}" />-->
+    <mkdir dir="${BinDir}" />
+    <echo message="Clean success!" />
+  </target>
+
+  <target name="build" depends="clean" description="編譯${ProjectName}">
+    <echo message="Compiling ${ProjectName}_${Version}" />
+    <javac destdir="${BinDir}" optimize="yes" encoding="UTF-8" srcdir="${SrcDir}" classpath="craftbukkit-1.7.2-R0.3.jar" />
+    <echo message="Compile success!" />
+  </target>
+
+  <target name="jar" description="包成Jar檔">
+    <antcall target="build" />
+    <jar destfile="${JarFile}" basedir="." level="9">
+      <fileset dir="${BinDir}" />
+      <include name="plugin.yml" />
+    </jar>
+  </target>
+</project>
